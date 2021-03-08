@@ -13,7 +13,7 @@ import com.example.roomdatabasemvvm.Dao.ActorDao;
 import com.example.roomdatabasemvvm.Model.Actor;
 
 
-@Database(entities = {Actor.class}, version = 1)
+@Database(entities = {Actor.class}, version = 2)
 public abstract class ActorDataBase extends RoomDatabase {
 
 
@@ -32,6 +32,7 @@ public abstract class ActorDataBase extends RoomDatabase {
                     INSTANCE = Room.databaseBuilder(context, ActorDataBase.class,
                             DATABASE_NAME)
                             .addCallback(callback)
+                            .fallbackToDestructiveMigration()
                             .build();
 
 

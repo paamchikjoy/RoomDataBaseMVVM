@@ -19,7 +19,7 @@ public interface ActorDao {
 //    @Insert(onConflict = OnConflictStrategy.REPLACE)
 //      void delete();
     @Query("SELECT * FROM actor")
-   LiveData <List<Actor> >getAllActors();
+   LiveData <List<Actor> > getAllActors();
     @Query("DELETE FROM actor")
     void deleteAll();
 }

@@ -2,11 +2,12 @@ package com.example.roomdatabasemvvm.Model;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 import com.google.gson.annotations.SerializedName;
 
-@Entity(tableName = "actor")
+@Entity(tableName = "actor", indices = @Index(value = {"id"},unique = true))
 public class Actor {
     @PrimaryKey(autoGenerate = true)
     private  int actorId;
